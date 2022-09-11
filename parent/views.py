@@ -11,8 +11,8 @@ from chatterbot.trainers import ListTrainer
 from .models import TrainingConversation
 
 
-myBot = ChatBot(  
-    name = 'Sakura',  
+vp_bot = ChatBot(  
+    name = 'Sara',  # semi-automated-robotic-AI
     read_only = True,  
     logic_adapters = [  
         'chatterbot.logic.MathematicalEvaluation',  
@@ -20,12 +20,12 @@ myBot = ChatBot(
         ]  
 )  
 
-list_trainee = ListTrainer(myBot)  
+list_trainee = ListTrainer(vp_bot)  
 
 
 @api_view(['GET'])
 def talk_view(request, talk):
-    return Response({"message": talk})
+    return Response({"message": vp_bot.generate_response(talk)})
 
 
 @api_view(['GET'])
