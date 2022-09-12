@@ -33,7 +33,6 @@ list_trainee = ListTrainer(vp_bot)
 
 @api_view(['POST'])
 def talk_view(request):
-    print("Requets: ", vp_bot.get_response("hello"))
     return Response({"message": str(vp_bot.get_response(request.data.get('text')))})
 
 
