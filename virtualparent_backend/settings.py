@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zre)&of2+22hum+25lktv)ad7%*&4u((kc+iz7^*yjq#pt28p@
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['virtualparent.herokuapp.com']
 
 
 if DEBUG:
