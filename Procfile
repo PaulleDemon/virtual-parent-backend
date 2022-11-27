@@ -1,0 +1,1 @@
+web: gunicorn virtualparent_backend.wsgi
