@@ -1,0 +1,17 @@
+services:
+- type: web
+  name: django-quick-start
+  env: python
+  plan: starter
+  buildCommand: ./build.sh
+  startCommand: gunicorn virtualparent_backend.wsgi:application
+  autoDeploy: false
+  envVars:
+    - key: WEB_CONCURRENCY
+      value: 4
+    - key: DJANGO_SECRET_KEY
+      generateValue: true
+    - key: DJANGO_ADMIN_URL
+      generateValue: true
+    - key: DJANGO_SETTINGS_MODULE
+      value: virtualparent_backend.settings.production
